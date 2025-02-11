@@ -1,0 +1,191 @@
+/* Nature-Themed Background */
+.nature-theme {
+    background: linear-gradient(to bottom, #000000, #dfffd0);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+    box-sizing: border-box;
+  }
+  
+  /* Overall Container */
+  .carbon-emission-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 95%; /* Limit max width for better readability */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Box containing the Jar and Form */
+  .carbon-box {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    color: #333;
+    box-sizing: border-box;
+  }
+  
+  /* Title and Description */
+  .nature-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #28df25;
+  }
+  
+  .nature-description {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #333333;
+    line-height: 1.5;
+  }
+  
+  /* Jar Styling */
+  .jar-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .jar-container {
+    width: 140px;
+    height: 280px;
+    border: 4px solid #2d572c;
+    border-radius: 12px;
+    position: relative;
+    background: linear-gradient(to bottom, #c8e6c9, #a5d6a7);
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .emission-jar-level {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+  }
+  
+  .jar-text {
+    z-index: 2;
+  }
+  
+  /* Form Styling */
+  .carbon-form {
+    text-align: left;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .nature-label {
+    font-size: 15px;
+    margin-bottom: 8px;
+    display: block;
+    color: #2d572c;
+  }
+  
+  .nature-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #a5d6a7;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #ffffff;
+    color: #333333;
+    box-sizing: border-box;
+  }
+  
+  .nature-input:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Button Styling */
+  .nature-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #43a047;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-sizing: border-box;
+  }
+  
+  .nature-button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .nature-title {
+      font-size: 24px;
+    }
+  
+    .jar-container {
+      width: 120px;
+      height: 240px;
+    }
+  
+    .carbon-box {
+      padding: 20px;
+    }
+  
+    .nature-description {
+      font-size: 14px;
+    }
+  
+    .nature-button {
+      font-size: 14px;
+      padding: 12px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .nature-title {
+      font-size: 20px;
+    }
+  
+    .jar-container {
+      width: 100px;
+      height: 200px;
+    }
+  
+    .nature-description {
+      font-size: 12px;
+    }
+  
+    .nature-button {
+      font-size: 13px;
+    }
+  }
+  

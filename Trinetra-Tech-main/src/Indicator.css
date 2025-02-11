@@ -1,0 +1,8 @@
+.indicator {
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 0.9rem;
+}

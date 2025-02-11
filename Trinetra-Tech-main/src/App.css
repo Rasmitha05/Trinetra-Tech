@@ -1,0 +1,151 @@
+/* src/App.css */
+.app {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: white;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.emoji {
+  font-size: 48px;
+}
+
+.jar-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jar-top {
+  width: 240px;
+  height: 30px;
+  border-radius: 0 0 120px 120px; /* Reversed curve */
+  border: 6px solid rgba(18, 17, 17, 0.5); /* Transparent border */
+  border-top: none; /* Remove top border */
+  z-index: 5; /* Lower z-index to make sure bubbles are above */
+  position: relative;
+  bottom: 1px; /* Move upwards by increasing the value */
+  transform: scale(1.1); /* Slight outward curvature effect */
+  background: rgba(21, 1, 1, 0.347); /* Semi-transparent background */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for realism */
+}
+
+.jar {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 200px;
+  height: 400px;
+  background: #fff;
+  border-radius: 0 0 20% 20%; /* Circular bottom */
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(221, 221, 221, 0.5);
+  border: 4px solid #232222;
+  border-top: none; /* Remove top border to blend with the jar-top */
+  z-index: 1; /* Keep jar below the bubbles */
+}
+
+.segment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.988);
+  font-size: 24px;
+  position: relative;
+  transition: height 0.8s ease, background-color 0.2s ease;
+  animation: float 4s ease-in-out infinite; /* Slower and more pronounced float */
+}
+.bubbles {
+  position: absolute;
+  top: 30%; /* Adjusted to position the bubbles slightly above the middle of the segment */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 20px; /* Limit the height for the bubble effect */
+  pointer-events: none;
+  z-index: 10; /* Ensure bubbles appear above the jar */
+}
+.bubble {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: rgba(10, 0, 0, 0.96); /* Smoky bubbles */
+  border-radius: 50%;
+  animation: bubble 2s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0); /* No shadow */
+    
+    /* Original color stays, no opacity change */
+  }
+  50% {
+    transform: translateY(-10px); /* Increased vertical movement */
+    opacity: 0.9; /* Keep opacity high for a darker look */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6); /* Darker shadow */
+    background-color: rgba(0, 0, 0, 0.744); /* Darker background when moving up */
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0); /* Subtle shadow */
+    background-color: rgba(0, 0, 0, 0.419); /* Maintain darker but slightly lighter */
+  }
+}
+
+.segment::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.09); /* Default darker smoky layer */
+  z-index: -1; /* Below the actual segment */
+  transition: background-color 3s ease;
+}
+@keyframes bubble {
+  0% {
+    transform: translateY(0) scale(1.2);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-80px) scale(1.2); /* Bubbles grow and move */
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(-200px) scale(1.2); /* Bubbles rise higher and shrink */
+    opacity: 0;
+  }
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.control {
+  margin: 10px;
+  text-align: center;
+}
+
+input[type='range'] {
+  margin: 10px 0;
+  width: 150px;
+}
